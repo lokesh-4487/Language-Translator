@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Language Translator</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Language Translator</h1>
+        <p>Translate text between different languages</p>
+      </header>
+
+      <main class="translator-box">
+        <div class="language-selectors">
+          <div class="language-group">
+            <label for="sourceLanguage">Translate from</label>
+
+            <select id="sourceLanguage">
+              <option value="en">English</option>
+              <option value="hi">Hindi</option>
+              <option value="mr">Marathi</option>
+              <option value="gu">Gujarati</option>
+              <option value="fr">French</option>
+              <option value="es">Spanish</option>
+              <option value="de">German</option>
+              <option value="ja">Japanese</option>
+            </select>
+          </div>
+
+          <button id="swapButton" class="swap-button" type="button">⇄</button>
+
+          <div class="language-group">
+            <label for="targetLanguage">Translate to</label>
+
+            <select id="targetLanguage">
+              <option value="hi">Hindi</option>
+              <option value="en">English</option>
+              <option value="mr">Marathi</option>
+              <option value="gu">Gujarati</option>
+              <option value="fr">French</option>
+              <option value="es">Spanish</option>
+              <option value="de">German</option>
+              <option value="ja">Japanese</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="text-area-container">
+          <div class="text-area-group">
+            <label for="inputText">Enter your text</label>
+
+            <textarea
+              id="inputText"
+              placeholder="Type or paste your text here..."
+              maxlength="500"
+            ></textarea>
+
+            <div class="text-area-footer">
+              <span id="characterCount">0 / 500</span>
+              <button id="clearButton" type="button">Clear</button>
+            </div>
+          </div>
+
+          <div class="text-area-group">
+            <label for="translatedText">Translated text</label>
+
+            <textarea
+              id="translatedText"
+              placeholder="Your translation will appear here..."
+              readonly
+            ></textarea>
+
+            <div class="text-area-footer">
+              <span id="statusMessage">Ready to translate</span>
+              <button id="copyButton" type="button">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <button id="translateButton" class="translate-button" type="button">
+          Translate
+        </button>
+      </main>
+
+      <footer>
+        <p>Language Translator | Built with Python and Flask</p>
+      </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
